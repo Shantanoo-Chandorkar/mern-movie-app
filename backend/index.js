@@ -12,8 +12,6 @@ const port = process.env.PORT || 3000;
 
 const app = express();
 
-// Initialize database
-
 // Initialize passport and other middleware here
 
 app.use(helmet());
@@ -28,8 +26,8 @@ app.get("/", (req, res) => {
 // Middleware
 app.use("/api/users", UserRoutes);
 
-// create server and listen
-
+// create server and listen after
+// Initialize database
 connectDB().then(() => {
   app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
