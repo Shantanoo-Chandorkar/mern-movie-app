@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 app.use("/api/users", UserRoutes);
 
 // create server and listen
-app.listen(port, () => {
+app.listen(port, (req, res) => {
   console.log(`Server is running on port ${port}`);
   res.json({ message: "Server is listening" });
 });
