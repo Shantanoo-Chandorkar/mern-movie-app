@@ -1,0 +1,80 @@
+@import "../../mixins.scss";
+// .container {
+//   min-height: 700px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   gap: 20px;
+//   background-color: rgba($color: #000000, $alpha: 0.7);
+
+//   .title {
+//     color: white;
+//     font-size: 36px;
+//     text-align: center;
+//     margin-bottom: 1rem;
+//   }
+
+//   .form-handler {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     gap: 20px;
+
+//     .input {
+//       padding: 10px;
+//       border: none;
+//       border-radius: 5px;
+//       margin: 5px;
+//       color: white;
+//       background: none;
+//       border-bottom: 1px solid white;
+//     }
+
+//     .label {
+//       font-size: 16px;
+//       margin: 5px;
+//       color: white;
+//     }
+
+//     .button {
+//       width: 5rem;
+//       color: white;
+//       padding: 10px;
+//       background-image: var(--gradient1);
+//       border: none;
+//       border-radius: 15px;
+//     }
+
+//     .text-container {
+//       display: flex;
+//       margin: 5px;
+//       color: white;
+
+//       .text {
+//         margin-right: 1rem;
+//       }
+
+//       .link {
+//         text-decoration: none;
+//         color: teal;
+//         border-bottom: 1px solid teal;
+//       }
+//     }
+//   }
+// }
+
+.form-input {
+  border: none;
+  background: transparent;
+  color: #d1d1d1;
+  border-bottom: 1px solid #33d9b2;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.form-text {
+  color: #d1d1d1;
+  padding: 5px;
+}
