@@ -7,13 +7,19 @@ const cookieParser = require("cookie-parser");
 require("dotenv").config();
 const connectDB = require("./db");
 const UserRoutes = require("./routes/UserRoutes");
+const { MongoClient } = require("mongodb");
 
 const port = process.env.PORT || 8800;
+
+const uri = process.env.MONGO_URI;
+const client = new MongoClient(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const app = express();
 
 // Initialize database
-connectDB();
 
 // Initialize passport and other middleware here
 
@@ -30,6 +36,14 @@ app.get("/", (req, res) => {
 app.use("/api/users", UserRoutes);
 
 // create server and listen
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+
+client.connect((err) => {
+  if (err) {
+    console.error(err);
+    return false;
+  }
+  // connection to mongo is successful, listen for requests
+  app.listen(port, () => {
+    console.log("listening for requests");
+  });
 });
