@@ -24,19 +24,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(passport.initialize());
 
 app.get("/", (req, res) => {
-  res.json({ message: "Hellllo Worrrrrld!" });
+  res.send({ message: "Hellllo Worrrrrld!" });
 });
 // Middleware
 app.use("/api/users", UserRoutes);
 
 // create server and listen
-app.listen(port, (req, res) => {
+app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
-  res.json({ message: "Server is listening" });
 });
-
-// https
-//   .createServer("/", (req, res) => {
-//     res.end("Heelo woorld!");
-//   })
-//   .listen(port);
