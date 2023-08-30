@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://eager-leotard-cod.cyclic.cloud/",
+        target: "https://cinemix.onrender.com/",
         changeOrigin: true,
       },
     },
