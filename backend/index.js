@@ -7,15 +7,8 @@ const cookieParser = require("cookie-parser");
 require("dotenv").config();
 const connectDB = require("./db");
 const UserRoutes = require("./routes/UserRoutes");
-const { MongoClient } = require("mongodb");
 
 const port = process.env.PORT || 8800;
-
-const uri = process.env.MONGO_URI;
-const client = new MongoClient(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
 
 const app = express();
 
@@ -37,13 +30,8 @@ app.use("/api/users", UserRoutes);
 
 // create server and listen
 
-client.connect((err) => {
-  if (err) {
-    console.error(err);
-    return false;
-  }
-  // connection to mongo is successful, listen for requests
+connectDB().then(() => {
   app.listen(port, () => {
-    console.log("listening for requests");
+    console.log(`Server is running on port ${port}`);
   });
 });
